@@ -56,7 +56,11 @@
         var(--bg);
       border-bottom: 1px solid var(--border);
     }
-    .hero-content { max-width: 640px; }
+    .hero-content { max-width: 680px; text-align: center; margin: 0 auto; }
+    .hero-logo { margin-bottom: 2.2rem; }
+    .hero-logo img { height: 90px; width: auto; mix-blend-mode: screen; }
+    .hero-content .btn-group { justify-content: center; }
+    .hero-content .hero-sub { margin-left: auto; margin-right: auto; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem; }
     .hero-sub { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin-bottom: 2.2rem; }
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -175,6 +179,7 @@
       nav { padding: 0.8rem 4%; }
       .nav-links { display: none; }
       section { padding: 4rem 5%; }
+      .hero-logo img { height: 64px; }
       #nosotros { grid-template-columns: 1fr; gap: 2.5rem; }
       .contacto-grid { grid-template-columns: 1fr; gap: 2rem; }
       .stats-bar { flex-direction: column; }
@@ -205,6 +210,9 @@
   <!-- HERO -->
   <section id="inicio">
     <div class="hero-content">
+      <div class="hero-logo">
+        <img src="logo.png" alt="Kolmenor SRL" />
+      </div>
       <p class="eyebrow">Construcción y Telecomunicaciones</p>
       <h1>25 años construyendo infraestructura en Argentina</h1>
       <p class="hero-sub">Obra civil, montaje estructural y telecomunicaciones para empresas líderes del sector energético y de comunicaciones.</p>
