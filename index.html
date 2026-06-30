@@ -56,19 +56,18 @@
         var(--bg);
       border-bottom: 1px solid var(--border);
     }
-    .hero-content { max-width: 640px; }
-    .hero-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
+    .hero-content { max-width: 640px; position: relative; z-index: 1; }
+    .hero-inner { position: relative; overflow: hidden; }
     .hero-k {
-      flex-shrink: 0;
-      opacity: 0.92;
+      position: absolute;
+      right: -30px;
+      left: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.13;
+      pointer-events: none;
     }
-    .hero-k svg { width: 180px; height: 180px; }
+    .hero-k svg { width: 280px; height: 280px; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem; }
     .hero-sub { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin-bottom: 2.2rem; }
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -218,6 +217,13 @@
   <!-- HERO -->
   <section id="inicio">
     <div class="hero-inner">
+      <div class="hero-k">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="20" width="35" height="160" fill="#c0392b"/>
+          <polygon points="105,20 195,20 105,95" fill="#c0392b"/>
+          <polygon points="105,105 195,180 105,180" fill="#c0392b"/>
+        </svg>
+      </div>
       <div class="hero-content">
         <p class="eyebrow">Construcción y Telecomunicaciones</p>
         <h1>25 años construyendo infraestructura en Argentina</h1>
@@ -226,13 +232,6 @@
           <a href="#contacto" class="btn-primary">Pedí tu presupuesto</a>
           <a href="#servicios" class="btn-ghost">Ver servicios</a>
         </div>
-      </div>
-      <div class="hero-k">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="20" width="35" height="160" fill="#e8a930"/>
-          <polygon points="105,20 195,20 105,95" fill="#e8a930"/>
-          <polygon points="105,105 195,180 105,180" fill="#e8a930"/>
-        </svg>
       </div>
     </div>
     <div class="stats-bar">
