@@ -4,78 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kolmenor SRL — Construcción y Telecomunicaciones</title>
-  <meta name="description" content="Empresa cordobesa con 30 años de experiencia en obra civil, montaje estructural y telecomunicaciones para el sector energético y de comunicaciones." />
+  <meta name="description" content="Empresa con 30 años de experiencia en obra civil, montaje estructural y telecomunicaciones en Argentina, Uruguay y Paraguay." />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:       #12192a;
-      --bg2:      #1a2235;
-      --card:     #1f2d42;
-      --border:   #2a3a52;
-      --gold:     #e8a930;
-      --white:    #ffffff;
-      --muted:    #8fa0b8;
-      --text:     #dce6f0;
-      --radius:   10px;
+      --bg: #12192a; --bg2: #1a2235; --card: #1f2d42; --border: #2a3a52;
+      --gold: #e8a930; --red: #c0392b; --white: #ffffff; --muted: #8fa0b8; --text: #dce6f0; --radius: 10px;
     }
-
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; }
 
+    /* RED TOP BAR */
+    
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0.7rem 6%;
-      background: rgba(18,25,42,0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      background: #c0392b;
+      border-bottom: none;
     }
-    .nav-logo img { height: 44px; width: auto; mix-blend-mode: screen; }
-    .nav-links { list-style: none; display: flex; gap: 2.2rem; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-logo img { height: 52px; width: auto; }
+    .nav-links { list-style: none; display: flex; gap: 2rem; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--white); }
 
     /* SECTIONS */
     section { padding: 6rem 6%; }
     .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
     h1, h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: 0.01em; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
 
     /* HERO */
     #inicio {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center;
-      padding-top: 7rem;
-      background:
-        radial-gradient(ellipse 60% 60% at 75% 40%, rgba(232,169,48,0.07) 0%, transparent 70%),
-        var(--bg);
+      padding-top: 8rem;
+      background: radial-gradient(ellipse 60% 60% at 75% 40%, rgba(192,57,43,0.07) 0%, transparent 70%), var(--bg);
       border-bottom: 1px solid var(--border);
     }
-    .hero-content { max-width: 640px; position: relative; z-index: 1; }
     .hero-inner { position: relative; overflow: hidden; }
-    .hero-k {
-      position: absolute;
-      right: -30px;
-      left: auto;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.13;
-      pointer-events: none;
-    }
+    .hero-k { position: absolute; right: -30px; top: 50%; transform: translateY(-50%); opacity: 0.13; pointer-events: none; }
     .hero-k svg { width: 280px; height: 280px; }
-    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem; }
+    .hero-content { max-width: 640px; position: relative; z-index: 1; }
+    .hero-slogan { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 600; color: var(--red); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.6rem; }
     .hero-sub { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin-bottom: 2.2rem; }
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary { background: var(--gold); color: #12192a; font-weight: 600; font-size: 0.9rem; padding: 0.8rem 1.6rem; border-radius: var(--radius); text-decoration: none; transition: background 0.2s; }
     .btn-primary:hover { background: #f0b93a; }
     .btn-ghost { border: 1px solid var(--border); color: var(--text); font-weight: 500; font-size: 0.9rem; padding: 0.8rem 1.6rem; border-radius: var(--radius); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
     .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .solar-badge { margin-top: 1.2rem; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 0.4rem 1rem; }
+    .solar-badge span { font-size: 0.78rem; color: var(--muted); }
 
+    /* STATS */
     .stats-bar { display: flex; border-top: 1px solid var(--border); margin-top: 4rem; }
     .stat { flex: 1; padding: 1.8rem 0; text-align: center; border-right: 1px solid var(--border); }
     .stat:last-child { border-right: none; }
@@ -86,7 +73,6 @@
     #servicios { background: var(--bg2); }
     .section-header { margin-bottom: 2.8rem; }
     .section-header p { color: var(--muted); margin-top: 0.6rem; max-width: 480px; }
-    h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
     .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem; border-top: 3px solid var(--gold); transition: transform 0.2s; }
     .card:hover { transform: translateY(-3px); }
@@ -96,73 +82,91 @@
 
     /* GALERÍA */
     #galeria { background: var(--bg); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 220px 220px;
-      gap: 8px;
-      margin-top: 2.5rem;
-    }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 220px 220px; gap: 8px; margin-top: 2.5rem; }
     .gallery-item { overflow: hidden; border-radius: var(--radius); position: relative; }
     .gallery-item.featured { grid-column: span 2; grid-row: span 2; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.88); }
-    .gallery-item:hover img { transform: scale(1.05); filter: brightness(1); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.85); }
+    .gallery-item:hover img { transform: scale(1.05); filter: brightness(0.5); }
+    .gallery-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.88), transparent);
+      padding: 1.2rem 1rem 0.8rem;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+    .gallery-item.featured .gallery-caption { padding: 2rem 1.4rem 1.2rem; }
+    .gallery-caption .caption-tag {
+      display: inline-block; background: var(--red); color: white;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.4rem;
+    }
+    .gallery-caption .caption-text { display: block; color: white; font-size: 0.82rem; font-weight: 500; }
+    .gallery-item.featured .caption-text { font-size: 1rem; }
+    .gallery-item:hover .gallery-caption { opacity: 1; transform: translateY(0); }
 
     /* NOSOTROS */
-    #nosotros { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--bg2); }
+    #nosotros { background: var(--bg2); }
+    .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .nosotros-text h2 { margin-bottom: 1rem; }
     .nosotros-text > p { color: var(--muted); margin-bottom: 1.5rem; }
-    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.8rem; }
     .bullet-list li { display: flex; align-items: flex-start; gap: 0.7rem; color: var(--muted); font-size: 0.93rem; }
     .bullet-list li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); margin-top: 0.45rem; flex-shrink: 0; }
-    .nosotros-aside { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-    .aside-block { background: var(--card); padding: 2rem 2.2rem; }
-    .aside-big { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1; }
-    .aside-label { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+    .bullet-list li.solar::before { background: #4caf82; }
+    .solar-card { border: 1px solid rgba(76,175,130,0.25); border-left: 3px solid #4caf82; border-radius: 6px; padding: 1rem 1.2rem; background: rgba(76,175,130,0.05); display: flex; align-items: center; gap: 1rem; }
+    .solar-card-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .solar-card-title { font-size: 0.85rem; font-weight: 600; color: #4caf82; margin-bottom: 0.25rem; }
+    .solar-card-text { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* MISION VISION */
+    .equipo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    .equipo-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: var(--radius); padding: 1.2rem; }
+    .equipo-card .equipo-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .equipo-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+    .equipo-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+    .equipo-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0 2rem; }
+    @media (max-width: 768px) { .equipo-grid { grid-template-columns: 1fr; } }
+    .mision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+    .mision-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; border-top: 3px solid var(--red); }
+    .mision-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+    .mision-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+
+    /* SUSTENTABILIDAD */
+    #sustentabilidad { background: var(--bg2); }
+    .solar-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; border-radius: var(--radius); overflow: hidden; }
+    .solar-photos img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s; filter: brightness(0.9); }
+    .solar-photos img:hover { transform: scale(1.02); filter: brightness(1); }
 
     /* CLIENTES */
-    #clientes { background: var(--bg2); }
-    .clientes-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem 2.5rem;
-      margin-top: 2.5rem;
+    #clientes { background: var(--bg); overflow: hidden; }
+    .clientes-track-wrap { overflow: hidden; margin-top: 2.5rem; position: relative; }
+    .clientes-track-wrap::before,
+    .clientes-track-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; }
+    .clientes-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .clientes-track-wrap::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+    .clientes-track { display: flex; gap: 1.5rem; width: max-content; animation: scroll-logos 28s linear infinite; }
+    .clientes-track:hover { animation-play-state: paused; }
+    @keyframes scroll-logos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .cliente-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem 1.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 160px;
-      height: 80px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .cliente-item:hover { border-color: var(--gold); transform: translateY(-2px); }
-    .cliente-item img {
-      max-width: 120px;
-      max-height: 52px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      filter: grayscale(100%) brightness(1.8);
-      opacity: 0.7;
-      transition: filter 0.2s, opacity 0.2s;
-    }
-    .cliente-item:hover img { filter: none; opacity: 1; }
+    .cliente-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.6rem; display: flex; align-items: center; justify-content: center; width: 150px; height: 75px; flex-shrink: 0; transition: border-color 0.2s; }
+    .cliente-item:hover { border-color: var(--gold); }
+    .cliente-item img { max-width: 110px; max-height: 48px; width: auto; height: auto; object-fit: contain; opacity: 0.9; transition: opacity 0.2s; }
+    .cliente-item:hover img { opacity: 1; }
 
     /* CONTACTO */
-    #contacto { background: var(--bg); }
+    #contacto { background: var(--bg2); }
     .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; }
     .contact-info { display: flex; flex-direction: column; gap: 1.4rem; }
     .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
     .contact-icon { width: 38px; height: 38px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
     .contact-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
     .contact-val { color: var(--text); font-size: 0.92rem; }
+    .contact-val a { color: var(--text); text-decoration: none; }
+    .maps-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.4rem; color: var(--gold); font-size: 0.8rem; text-decoration: none; border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.7rem; transition: border-color 0.2s; }
+    .maps-btn:hover { border-color: var(--gold); }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
     .form-group label { font-size: 0.82rem; color: var(--muted); }
@@ -174,7 +178,7 @@
     .btn-submit:hover { border-color: var(--gold); color: var(--gold); }
 
     /* FOOTER */
-    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 1.6rem 6%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 1.6rem 6%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-logo img { height: 36px; width: auto; mix-blend-mode: screen; opacity: 0.9; }
     footer p { color: var(--muted); font-size: 0.82rem; }
     .social-links { display: flex; gap: 1rem; }
@@ -187,7 +191,9 @@
       .nav-links { display: none; }
       section { padding: 4rem 5%; }
       .hero-k { display: none; }
-      #nosotros { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nosotros-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mision-grid { grid-template-columns: 1fr; }
+      .solar-photos { grid-template-columns: 1fr; }
       .contacto-grid { grid-template-columns: 1fr; gap: 2rem; }
       .stats-bar { flex-direction: column; }
       .stat { border-right: none; border-bottom: 1px solid var(--border); }
@@ -202,7 +208,7 @@
 
   <nav>
     <a href="#inicio" class="nav-logo">
-      <img src="logo.png" alt="Kolmenor SRL" />
+      <img src="logo_nav.png" alt="Kolmenor SRL" />
     </a>
     <ul class="nav-links">
       <li><a href="#inicio">Inicio</a></li>
@@ -225,18 +231,23 @@
         </svg>
       </div>
       <div class="hero-content">
+        <p class="hero-slogan">Construimos la infraestructura que conecta al futuro</p>
         <p class="eyebrow">Construcción y Telecomunicaciones</p>
-        <h1>30 años construyendo infraestructura en Argentina</h1>
-        <p class="hero-sub">Obra civil, montaje estructural y telecomunicaciones para empresas líderes del sector energético y de comunicaciones.</p>
+        <h1>30 años de experiencia en obra civil y telecomunicaciones</h1>
+        <p class="hero-sub">Obra civil, montaje estructural y telecomunicaciones para empresas líderes del sector energético y de comunicaciones en Argentina, Uruguay y Paraguay.</p>
         <div class="btn-group">
           <a href="#contacto" class="btn-primary">Pedí tu presupuesto</a>
           <a href="#servicios" class="btn-ghost">Ver servicios</a>
+        </div>
+        <div class="solar-badge">
+          <span>☀️</span>
+          <span>Empresa con energía solar propia</span>
         </div>
       </div>
     </div>
     <div class="stats-bar">
       <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Años de experiencia</div></div>
-      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Clientes corporativos</div></div>
+      <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Sitios visitados por año</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Compromiso con la obra</div></div>
     </div>
   </section>
@@ -261,53 +272,124 @@
     <div class="section-header">
       <p class="eyebrow">Nuestras obras</p>
       <h2>Trabajo en campo</h2>
-      <p>Proyectos ejecutados en todo el país para el sector energético y de telecomunicaciones.</p>
+      <p>Proyectos ejecutados en todo el país para el sector de telecomunicaciones y energético.</p>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item featured">
-        <img src="obra6.jpg" alt="Montaje estructural en altura" />
+        <img src="obra_new4.jpg" alt="Izaje con dos grúas" />
+        <div class="gallery-caption">
+          <span class="caption-tag">Montaje en altura</span>
+          <span class="caption-text">Operación con dos grúas simultáneas en torre de telecomunicaciones</span>
+        </div>
       </div>
       <div class="gallery-item">
-        <img src="obra1.jpg" alt="Torre de telecomunicaciones" />
+        <img src="obra_new1.jpg" alt="Vista aérea desde la torre" />
+        <div class="gallery-caption">
+          <span class="caption-tag">Trabajo en altura</span>
+          <span class="caption-text">Vista aérea a 144m desde estructura en campo</span>
+        </div>
       </div>
       <div class="gallery-item">
-        <img src="obra3.jpg" alt="Obra civil — colada de hormigón" />
+        <img src="obra_new2.jpg" alt="Izaje de shelter" />
+        <div class="gallery-caption">
+          <span class="caption-tag">Telecomunicaciones</span>
+          <span class="caption-text">Posicionamiento de shelter con grúa articulada</span>
+        </div>
       </div>
       <div class="gallery-item">
-        <img src="obra4.jpg" alt="Torres de antenas" />
+        <img src="obra_new5.jpg" alt="Estructura metálica con grúa" />
+        <div class="gallery-caption">
+          <span class="caption-tag">Obra civil</span>
+          <span class="caption-text">Montaje de estructura metálica en subestación eléctrica</span>
+        </div>
       </div>
       <div class="gallery-item">
-        <img src="obra5.jpg" alt="Montaje de estructura metálica" />
+        <img src="obra_new6.jpg" alt="Colada de hormigón" />
+        <div class="gallery-caption">
+          <span class="caption-tag">Cimentación</span>
+          <span class="caption-text">Colada de hormigón para fundación de torres</span>
+        </div>
       </div>
       <div class="gallery-item">
-        <img src="obra7.jpg" alt="Operario en campo" />
+        <img src="obra_new3.jpg" alt="Canasto elevado con equipo" />
+        <div class="gallery-caption">
+          <span class="caption-tag">Seguridad</span>
+          <span class="caption-text">Equipo técnico elevado en canasto de seguridad</span>
+        </div>
       </div>
       <div class="gallery-item">
-        <img src="obra8.jpg" alt="Armado de cimientos" />
+        <img src="obra_new8.jpg" alt="Medición con teodolito" />
+        <div class="gallery-caption">
+          <span class="caption-tag">Relevamiento</span>
+          <span class="caption-text">Relevamiento técnico con teodolito en campo</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- NOSOTROS -->
   <section id="nosotros">
-    <div class="nosotros-text">
-      <p class="eyebrow">Quiénes somos</p>
-      <h2>Empresa con trayectoria</h2>
-      <p>Somos una empresa cordobesa dedicada a la construcción y telecomunicación especializada en obra civil y montaje. Trabajamos para las empresas más importantes del país desde hace más de dos décadas.</p>
-      <ul class="bullet-list">
-        <li>Organización sustentable y confiable en el sector de telecomunicaciones</li>
-        <li>Equipo técnico especializado en obra civil y montaje estructural</li>
-        <li>Presencia en todo el país con base en Córdoba Capital</li>
-      </ul>
-    </div>
-    <div class="nosotros-aside">
-      <div class="aside-block">
-        <div class="aside-big">1996</div>
-        <div class="aside-label">Año de fundación</div>
+    <div class="nosotros-grid">
+      <div class="nosotros-text">
+        <p class="eyebrow">Quiénes somos</p>
+        <h2>Empresa con trayectoria</h2>
+        <p>Somos una empresa con base en Córdoba, Argentina, dedicada a la construcción y telecomunicación especializada en obra civil y montaje. Operamos en Argentina, Uruguay y Paraguay, trabajando para las empresas más importantes del sector desde hace más de tres décadas.</p>
+        <ul class="bullet-list">
+          <li>Organización sustentable y confiable en el sector de telecomunicaciones</li>
+          <li>Equipo técnico especializado en obra civil y montaje estructural</li>
+          <li>Presencia en Argentina, Uruguay y Paraguay</li>
+          <li class="solar" style="color:#4caf82;">Autoabastecimiento energético mediante paneles solares propios</li>
+        </ul>
+        <div class="solar-card">
+          <div class="solar-card-icon">☀️</div>
+          <div>
+            <div class="solar-card-title">Compromiso con la sustentabilidad</div>
+            <div class="solar-card-text">Kolmenor opera con energía solar propia, reduciendo su huella ambiental y reafirmando su compromiso con un futuro más sustentable.</div>
+          </div>
+        </div>
       </div>
-      <div class="aside-block">
-        <div class="aside-big">Córdoba</div>
-        <div class="aside-label">La Tablada 1950, Barrio Alberdi</div>
+      <div>
+        <img src="solar1.jpg" alt="Paneles solares Kolmenor" style="width:100%; height:380px; object-fit:cover; border-radius:var(--radius); display:block;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MISIÓN Y VISIÓN -->
+  <section id="mision">
+    <div class="section-header">
+      <p class="eyebrow">Trayectoria</p>
+      <h2>Misión y Visión</h2>
+    </div>
+    <div class="mision-grid">
+      <div class="mision-card">
+        <h3>🎯 Misión</h3>
+        <p>Construir y mantener la infraestructura crítica que conecta al país, especializándonos en obra civil, montaje en altura y refuerzos estructurales. Fusionamos tres décadas de experiencia con un equipo técnico altamente capacitado para brindar un servicio eficiente que prioriza la seguridad, la precisión y la excelencia operativa.</p>
+      </div>
+      <div class="mision-card">
+        <h3>🔭 Visión</h3>
+        <p>Ser líderes en la evolución de las redes de infraestructura para telecomunicaciones y energía en la región, anticipándonos a los desafíos del sector mediante la innovación en procesos constructivos y manteniendo el estándar de calidad y confianza que nos define desde hace 30 años.</p>
+      </div>
+    </div>
+
+    <hr class="equipo-divider" />
+    <p class="eyebrow">Nuestro equipo</p>
+    <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:700; color:var(--white); margin-bottom:0.6rem;">Profesionales capacitados para cada desafío</h3>
+    <p style="color:var(--muted); font-size:0.92rem; max-width:560px;">Contamos con ingenieros, técnicos especializados y operarios certificados con experiencia en proyectos de alta complejidad en Argentina, Uruguay y Paraguay.</p>
+    <div class="equipo-grid">
+      <div class="equipo-card">
+        <div class="equipo-icon">👷</div>
+        <h4>Ingenieros en obra</h4>
+        <p>Dirección técnica y supervisión en campo con estándares de seguridad internacional.</p>
+      </div>
+      <div class="equipo-card">
+        <div class="equipo-icon">📡</div>
+        <h4>Técnicos especializados</h4>
+        <p>Montaje en altura, telecomunicaciones y obra civil con certificaciones vigentes.</p>
+      </div>
+      <div class="equipo-card">
+        <div class="equipo-icon">🛡️</div>
+        <h4>Seguridad e higiene</h4>
+        <p>Protocolo de seguridad en cada operación, priorizando el bienestar del equipo y la obra.</p>
       </div>
     </div>
   </section>
@@ -317,20 +399,34 @@
     <div class="section-header">
       <p class="eyebrow">Empresas que confían en nosotros</p>
       <h2>Nuestros clientes</h2>
-      <p>Trabajamos con las empresas más importantes del sector de telecomunicaciones y energético de Argentina.</p>
+      <p>Trabajamos con las empresas más importantes del sector de telecomunicaciones y energético de Argentina, Uruguay y Paraguay.</p>
     </div>
-    <div class="clientes-grid">
-      <div class="cliente-item"><img src="cliente8.png" alt="EPEC" /></div>
-      <div class="cliente-item"><img src="cliente9.png" alt="American Tower" /></div>
-      <div class="cliente-item"><img src="cliente1.png" alt="Aguas Cordobesas" /></div>
-      <div class="cliente-item"><img src="cliente2.png" alt="Transba" /></div>
-      <div class="cliente-item"><img src="cliente3.jpg" alt="Transener" /></div>
-      <div class="cliente-item"><img src="cliente4.png" alt="Claro" /></div>
-      <div class="cliente-item"><img src="cliente5.png" alt="Sites Latam" /></div>
-      <div class="cliente-item"><img src="cliente6.jpg" alt="Gestamp" /></div>
-      <div class="cliente-item"><img src="cliente7.png" alt="LITSA" /></div>
-      <div class="cliente-item"><img src="cliente10.png" alt="Telefónica" /></div>
-      <div class="cliente-item"><img src="cliente11.jpg" alt="Personal" /></div>
+    <div class="clientes-track-wrap">
+      <div class="clientes-track">
+        <div class="cliente-item"><img src="cliente8.png" alt="EPEC" /></div>
+        <div class="cliente-item"><img src="cliente9.png" alt="American Tower" /></div>
+        <div class="cliente-item"><img src="cliente1.png" alt="Aguas Cordobesas" /></div>
+        <div class="cliente-item"><img src="cliente2.png" alt="Transba" /></div>
+        <div class="cliente-item"><img src="cliente3.jpg" alt="Transener" /></div>
+        <div class="cliente-item"><img src="cliente4.png" alt="Claro" /></div>
+        <div class="cliente-item"><img src="cliente5.png" alt="Sites Latam" /></div>
+        <div class="cliente-item"><img src="cliente6.jpg" alt="Gestamp" /></div>
+        <div class="cliente-item"><img src="cliente7.png" alt="LITSA" /></div>
+        <div class="cliente-item"><img src="cliente10.png" alt="Telefónica" /></div>
+        <div class="cliente-item"><img src="cliente11.jpg" alt="Personal" /></div>
+        <!-- duplicado para loop infinito -->
+        <div class="cliente-item"><img src="cliente8.png" alt="EPEC" /></div>
+        <div class="cliente-item"><img src="cliente9.png" alt="American Tower" /></div>
+        <div class="cliente-item"><img src="cliente1.png" alt="Aguas Cordobesas" /></div>
+        <div class="cliente-item"><img src="cliente2.png" alt="Transba" /></div>
+        <div class="cliente-item"><img src="cliente3.jpg" alt="Transener" /></div>
+        <div class="cliente-item"><img src="cliente4.png" alt="Claro" /></div>
+        <div class="cliente-item"><img src="cliente5.png" alt="Sites Latam" /></div>
+        <div class="cliente-item"><img src="cliente6.jpg" alt="Gestamp" /></div>
+        <div class="cliente-item"><img src="cliente7.png" alt="LITSA" /></div>
+        <div class="cliente-item"><img src="cliente10.png" alt="Telefónica" /></div>
+        <div class="cliente-item"><img src="cliente11.jpg" alt="Personal" /></div>
+      </div>
     </div>
   </section>
 
@@ -338,15 +434,25 @@
   <section id="contacto">
     <p class="eyebrow">Hablemos</p>
     <h2>Contacto</h2>
+    <a href="https://maps.google.com/?q=La+Tablada+1950,+X5003BLF+Córdoba,+Argentina" target="_blank" style="display:block; margin: 2rem 0 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.!2d-64.19!3d-31.42!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2a1d5b9c0b9%3A0x1!2sLa+Tablada+1950%2C+X5003BLF+C%C3%B3rdoba%2C+Argentina!5e0!3m2!1ses!2sar!4v1"
+        width="100%" height="280" style="border:0; display:block; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy">
+      </iframe>
+    </a>
     <div class="contacto-grid">
       <div class="contact-info">
         <div class="contact-item">
           <div class="contact-icon">📍</div>
-          <div><div class="contact-label">Dirección</div><div class="contact-val">La Tablada 1950, Barrio Alberdi<br>Córdoba Capital, CP 5003</div></div>
+          <div>
+            <div class="contact-label">Dirección</div>
+            <div class="contact-val">La Tablada 1950, Barrio Alberdi<br>Córdoba Capital, CP 5003</div>
+            <a href="https://maps.google.com/?q=La+Tablada+1950,+Barrio+Alberdi,+Córdoba,+Argentina" target="_blank" class="maps-btn">📍 Ver en Google Maps</a>
+          </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📞</div>
-          <div><div class="contact-label">Teléfono</div><div class="contact-val">0351 893-8997</div></div>
+          <div><div class="contact-label">Teléfono</div><div class="contact-val"><a href="tel:+543518938997">0351 893-8997</a></div></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">🕐</div>
@@ -354,11 +460,11 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
-          <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:tecnica@kolmenorsrl.com.ar" style="color:var(--text);text-decoration:none;">tecnica@kolmenorsrl.com.ar</a></div></div>
+          <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:tecnica@kolmenorsrl.com.ar">tecnica@kolmenorsrl.com.ar</a></div></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">💬</div>
-          <div><div class="contact-label">WhatsApp</div><div class="contact-val"><a href="https://wa.me/5493515506342" target="_blank" style="color:var(--text);text-decoration:none;">+54 9 3515 50-6342</a></div></div>
+          <div><div class="contact-label">WhatsApp</div><div class="contact-val"><a href="https://wa.me/5493515506342" target="_blank">+54 9 3515 50-6342</a></div></div>
         </div>
       </div>
       <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -382,10 +488,10 @@
   <!-- FOOTER -->
   <footer>
     <a href="#inicio" class="footer-logo">
-      <img src="logo.png" alt="Kolmenor SRL" />
+      <img src="logo_nav.png" alt="Kolmenor SRL" />
     </a>
     <p>© 2026 Córdoba, Argentina</p>
-    <p style="font-size:0.75rem; color:#4a5f7a;">Diseño web: <a href="https://auvoradigital.com" target="_blank" style="color:#4a5f7a; text-decoration:none; transition: color 0.2s;" onmouseover="this.style.color='#e8a930'" onmouseout="this.style.color='#4a5f7a'">Auvora Digital</a></p>
+    <p style="font-size:0.75rem; color:#4a5f7a;">Diseño web: <a href="https://auvoradigital.com" target="_blank" style="color:#4a5f7a; text-decoration:none;" onmouseover="this.style.color='#e8a930'" onmouseout="this.style.color='#4a5f7a'">Auvora Digital</a></p>
     <div class="social-links">
       <a href="https://www.facebook.com/profile.php?id=100057441339500" target="_blank">FB</a>
       <a href="https://www.linkedin.com/company/kolmenor-srl/" target="_blank">IN</a>
